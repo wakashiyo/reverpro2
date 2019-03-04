@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  api:
+    build: api/.
+  
+  proxy:
+    build: .
+    ports:
+      - 8484:8484
+    depends_on:
+      - api
